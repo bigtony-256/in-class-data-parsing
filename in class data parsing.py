@@ -9,7 +9,7 @@ def read(filename):
     try:
         with open(filename, 'r', newline='', encoding='utf-8') as file:
             return [line.strip().split('\t') for line in file]
-    except UnicodeDecodeError:
+    except UnicodeDecodeError: # Sometimes there is trouble decoding txt files
         with open(filename, 'r', newline='', encoding='ISO-8859-1') as file:
             return [line.strip().split('\t') for line in file]
 
